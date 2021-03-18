@@ -1,4 +1,4 @@
 package com.rfl.billing.model;
 
-public class Bill {
+public class Bill extends AbstractBaseEntity {
 }
