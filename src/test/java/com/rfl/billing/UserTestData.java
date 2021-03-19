@@ -14,12 +14,12 @@ public class UserTestData {
     public static final int USER_ID = START_SEQ + 1;
 
     public static final User admin = new User(ADMIN_ID, "Admin", "admin@gmail.com", "admin",
-            Role.ADMIN);
+            Role.ROLE_ADMIN);
     public static final User user = new User(USER_ID, "User", "user@yandex.ru", "password",
-            Role.USER);
+            Role.ROLE_USER);
 
     public static User getNew() {
-        return new User(null, "New", "new@gmail.com", "newPass", Role.USER);
+        return new User(null, "New", "new@gmail.com", "newPass", Role.ROLE_USER);
     }
 
     public static User getUpdated() {
@@ -28,7 +28,7 @@ public class UserTestData {
         updated.setName("UpdatedName");
         updated.setPassword("newPass");
         updated.setEnabled(false);
-        updated.setRoles(Collections.singletonList(Role.ADMIN));
+        updated.setRoles(Collections.singletonList(Role.ROLE_ADMIN));
         return updated;
     }
 
