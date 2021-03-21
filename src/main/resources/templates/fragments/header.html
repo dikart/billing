@@ -1,5 +1,13 @@
-<head xmlns:th="http://www.thymeleaf.org" th:fragment="header">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
     <meta charset="UTF-8">
-    <title>Temporary header</title>
-    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/}">
+    <title>Title</title>
 </head>
+<body>
+<div th:fragment="header" class="container-fluid bg-danger d-flex justify-content-end">
+    <a class="btn btn-info" href="/login?logout">Выход</a>
+</div>
+
+</body>
+</html>

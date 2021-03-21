@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Пользователи</title>
+<head th:replace="fragments/head :: head">
+    ...
 </head>
 <body>
-    <h1>Пользователи</h1>
-    <table>
+<div th:replace="fragments/header :: header">
+
+</div>
+<div class="container-fluid">
+    <p class="h1">Пользователи</p>
+    <table class="table">
         <thead>
         <th>Имя</th>
         <th>Почта</th>
         </thead>
         <tbody>
-        <tr th:each ="user : ${users}">
+        <tr th:each="user : ${users}">
             <td th:utext="${user.name}"></td>
             <td th:utext="${user.email}"></td>
         </tr>
         </tbody>
     </table>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>
