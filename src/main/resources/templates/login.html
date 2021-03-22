@@ -9,20 +9,24 @@
     <form name="f" th:action="@{/login}" method="post">
         <fieldset>
             <legend>Введите почту и пароль</legend>
-            <div th:if="${param.error}" class="alert">Неправильный адрес почты или пароль</div>
+            <div th:if="${param.error}" class="alert alert-danger">Неправильный адрес почты или пароль</div>
             <div th:if="${param.logout}" class="alert alert-success">Вы успешно вышли из системы</div>
             <div class="form-group">
-                <label for="username">Почта</label>
+                <label for="username">Email</label>
                 <input type="text" id="username" name="username" class="form-control">
             </div>
             <div class="form-group">
                 <label for="password">Пароль</label>
                 <input type="password" id="password" name="password" class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary">Войти</button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Войти</button>
+                <a href="#" data-toggle="modal" data-target="#editForm" class="text-info float-right">Зарегистрироваться</a>
+            </div>
         </fieldset>
     </form>
 </div>
+<div th:replace="fragments/userform :: editForm"></div>
 <div th:replace="fragments/footer :: footer">
 
 </div>
