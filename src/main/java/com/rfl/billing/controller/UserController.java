@@ -28,13 +28,15 @@ public class UserController extends AbstractUserController{
     }
 
     @GetMapping("login")
-    public String login() {
+    public String login(M) {
         return "login";
     }
 
     @PostMapping("register")
     public String register(@ModelAttribute User user, Model model) {
+        user.setPassword(encoder.encode(user.getPassword()));
         service.create(user);
-        return "index";
+        model.addAttribute("registered", true);
+        return "login";
     }
 }
